@@ -18,7 +18,7 @@ const meta: Meta<typeof MUIButton> = {
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: { onClick: fn() },
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof MUIButton>;
 
 export default meta;
 
@@ -51,10 +51,24 @@ export const Secondary: Story = {
   },
 };
 
+export const Tertiary: Story = {
+  args: {
+    primary: true,
+    label: "Teritary",
+    borderRadius: 8,
+    disableRipple: true,
+    textTransform: "none",
+    textDecoration: "underline",
+    textColor: "green",
+    backgroundColor: "transparent",
+    fontWeight: 500
+  }
+};
+
 export const Small: Story = {
   args: {
     size: 'small',
-    label: 'Button',
+    label: "Small",
     backgroundColor: 'white',
     textColor: '#222',
     borderColor: '#eee',
@@ -67,7 +81,7 @@ export const Small: Story = {
 export const Large: Story = {
   args: {
     size: 'large',
-    label: 'Button',
+    label: "Large",
     backgroundColor: 'white',
     textColor: '#222',
     borderColor: '#eee',
@@ -80,7 +94,7 @@ export const Large: Story = {
 export const Destructive: Story = {
   args: {
     primary: true,
-    label: 'Delete',
+    label: "Destructive",
     backgroundColor: 'red',
   }
 };

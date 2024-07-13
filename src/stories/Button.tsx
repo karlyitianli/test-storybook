@@ -7,6 +7,10 @@ interface ButtonProps {
    */
   backgroundColor?: string;
   /**
+   * Optional box shadow
+   */
+  boxShadow?: string;
+  /**
      * Text color to use
      */
   textColor?: string;
@@ -14,6 +18,22 @@ interface ButtonProps {
    * Button contents
    */
   label: string;
+  /**
+   * Optional text transform
+   */
+  textTransform?: 'none' | 'capitalize' | 'uppercase' | 'lowercase';
+  /**
+   * Optional text decoration
+   */
+  textDecoration?: 'none' | 'underline' | 'overline' | 'line-through';
+  /**
+   * Optional font family
+   */
+  fontFamily?: string;
+  /**
+   * Optional font weight
+   */
+  fontWeight?: 400 | 500 | 700;
   /**
    * Optional border radius
    */
@@ -38,10 +58,6 @@ interface ButtonProps {
    * Should the button have ripple?
    */
   disableRipple?: boolean;
-  /**
-   * Optional text transform
-   */
-  textTransform?: 'none' | 'capitalize' | 'uppercase' | 'lowercase';
 }
 
 /**
@@ -51,13 +67,17 @@ export const MUIButton = ({
   primary = false,
   size = 'medium',
   backgroundColor,
+  boxShadow='none',
   label ='Button',
   onClick,
   textColor,
+  textDecoration='none',
+  textTransform = 'none',
+  fontFamily='Untitled sans',
+  fontWeight=500,
   borderColor,
   borderRadius=8,
   disableRipple=true,
-  textTransform = 'none',
 }: ButtonProps) => {
   const variant = primary ? 'contained' : 'outlined';
 
@@ -68,10 +88,15 @@ export const MUIButton = ({
       onClick={onClick}
       style={{
         backgroundColor: primary ? backgroundColor : undefined,
+        boxShadow: boxShadow,
         color: textColor,
+        textTransform,
+        textDecoration,
         borderColor: borderColor,
         borderRadius: borderRadius,
-        textTransform,
+        fontFamily: fontFamily,
+        fontWeight: fontWeight,
+        
       }}
       disableRipple={disableRipple}
     >
