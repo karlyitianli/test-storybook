@@ -4,7 +4,7 @@ import { MUIButton } from './Button';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta: Meta<typeof MUIButton> = {
-  title: 'Example/Button',
+  title: 'Components/Button',
   component: MUIButton,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
@@ -28,9 +28,10 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     primary: true,
-    label: 'Button',
+    label: 'Primary',
     backgroundColor: 'green',
     textColor: '#fff',
+    borderColor: 'green',
     borderRadius: 8,
     disableRipple: true,
     textTransform: 'none',
@@ -39,8 +40,14 @@ export const Primary: Story = {
 
 export const Secondary: Story = {
   args: {
-    label: 'Button',
-    backgroundColor: 'transparent',
+    primary: false,
+    label: 'Secondary',
+    backgroundColor: 'white',
+    textColor: '#222',
+    borderColor: '#eee',
+    borderRadius: 8,
+    disableRipple: true,
+    textTransform: 'none',
   },
 };
 
@@ -48,7 +55,12 @@ export const Small: Story = {
   args: {
     size: 'small',
     label: 'Button',
-    backgroundColor: 'green',
+    backgroundColor: 'white',
+    textColor: '#222',
+    borderColor: '#eee',
+    borderRadius: 8,
+    disableRipple: true,
+    textTransform: 'none',
   },
 };
 
@@ -56,14 +68,19 @@ export const Large: Story = {
   args: {
     size: 'large',
     label: 'Button',
-    backgroundColor: 'green',
+    backgroundColor: 'white',
+    textColor: '#222',
+    borderColor: '#eee',
+    borderRadius: 8,
+    disableRipple: true,
+    textTransform: 'none',
   },
 };
 
-export const Warning: Story = {
+export const Destructive: Story = {
   args: {
     primary: true,
-    label: 'Delete now',
+    label: 'Delete',
     backgroundColor: 'red',
   }
 };

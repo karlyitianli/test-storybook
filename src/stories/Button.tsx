@@ -19,6 +19,10 @@ interface ButtonProps {
    */
   borderRadius: number;
   /**
+   * Optional border color
+   */
+  borderColor: string;
+  /**
    * Is this the principal call to action on the page?
    */
   primary?: boolean;
@@ -50,6 +54,7 @@ export const MUIButton = ({
   label ='Button',
   onClick,
   textColor,
+  borderColor,
   borderRadius=8,
   disableRipple=true,
   textTransform = 'none',
@@ -64,6 +69,7 @@ export const MUIButton = ({
       style={{
         backgroundColor: primary ? backgroundColor : undefined,
         color: textColor,
+        borderColor: borderColor,
         borderRadius: borderRadius,
         textTransform,
       }}
