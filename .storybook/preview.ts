@@ -14,6 +14,7 @@ import '@fontsource/material-icons';
 const preview: Preview = {
   parameters: {
     controls: {
+      expanded: true, // Adds the description and default columns
       matchers: {
         color: /(background|color)$/i,
         date: /Date$/i,

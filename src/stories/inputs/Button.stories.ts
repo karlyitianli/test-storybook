@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
-import { MUIButton } from './Button';
+import { Button } from '../../components/inputs/Button';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
-const meta: Meta<typeof MUIButton> = {
-  title: 'Components/Button',
-  component: MUIButton,
+const meta: Meta<typeof Button> = {
+  title: 'Inputs/Button',
+  component: Button,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: 'centered',
@@ -27,60 +27,47 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   args: {
-    primary: true,
-    label: 'Primary',
-    backgroundColor: 'green',
-    textColor: '#fff',
-    borderColor: 'green',
-    borderRadius: 8,
-    disableRipple: true,
-    textTransform: 'none',
+    label: 'Button',
+    variant: 'contained',
   },
 };
 
 export const Secondary: Story = {
   args: {
-    primary: false,
-    label: 'Secondary',
-    backgroundColor: 'white',
-    textColor: '#222',
-    borderColor: '#eee',
-    borderRadius: 8,
-    disableRipple: true,
-    textTransform: 'none',
+    label: 'Button',
+    variant: 'outlined',
   },
 };
 
-export const Small: Story = {
+export const Tertiary: Story = {
   args: {
-    size: 'small',
-    label: 'Button',
-    backgroundColor: 'white',
-    textColor: '#222',
-    borderColor: '#eee',
-    borderRadius: 8,
-    disableRipple: true,
-    textTransform: 'none',
-  },
+    label: "Button",
+    variant: "text"
+  }
 };
 
 export const Large: Story = {
   args: {
-    size: 'large',
     label: 'Button',
-    backgroundColor: 'white',
-    textColor: '#222',
-    borderColor: '#eee',
-    borderRadius: 8,
-    disableRipple: true,
-    textTransform: 'none',
+    size: 'large',
+    variant: "contained",
   },
 };
 
-export const Destructive: Story = {
+export const Medium: Story = {
   args: {
-    primary: true,
-    label: 'Delete',
-    backgroundColor: 'red',
-  }
+    label: 'Button',
+    size: 'medium',
+    variant: "contained",
+  },
 };
+
+
+export const Small: Story = {
+  args: {
+    label: 'Button',
+    size: 'small',
+    variant: "contained",
+  },
+};
+
