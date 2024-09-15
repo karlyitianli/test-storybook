@@ -14,7 +14,21 @@ const meta: Meta<typeof Button> = {
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
-    backgroundColor: { control: { type: 'color' as ControlType } },
+    backgroundColor: { control: 'color' },
+    disableRipple: { control: 'boolean' },
+    borderRadius: { control: 'number' },
+    textTransform: {
+      control: 'select',
+      options: ['none', 'capitalize', 'uppercase', 'lowercase'],
+    },
+    variant: {
+      control: 'select',
+      options: ['text', 'outlined', 'contained'],
+    },
+    size: {
+      control: 'select',
+      options: ['small', 'medium', 'large'],
+    },
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: { onClick: fn() },
@@ -68,6 +82,30 @@ export const Small: Story = {
     label: 'Button',
     size: 'small',
     variant: "contained",
+  },
+};
+
+export const NoRipple: Story = {
+  args: {
+    label: 'No Ripple',
+    variant: 'contained',
+    disableRipple: true,
+  },
+};
+
+export const CustomBorderRadius: Story = {
+  args: {
+    label: 'Rounded Button',
+    variant: 'contained',
+    borderRadius: 20,
+  },
+};
+
+export const UppercaseText: Story = {
+  args: {
+    label: 'Uppercase',
+    variant: 'contained',
+    textTransform: 'uppercase',
   },
 };
 
