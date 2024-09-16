@@ -1,10 +1,17 @@
 import React from 'react';
-import Checkbox, { CheckboxProps as MUICheckboxProps } from '@mui/material/Checkbox';
+import { Checkbox as MuiCheckbox, CheckboxProps as MUICheckboxProps } from '@mui/material';
 
 export interface CheckboxProps extends MUICheckboxProps {
-  // Add any custom props here
+    label?: string; // Custom label prop
+    disabled?: boolean; // Add disabled prop
+    indeterminate?: boolean;
 }
 
-export const MUICheckbox: React.FC<CheckboxProps> = (props) => {
-  return <Checkbox {...props} />;
+export const Checkbox: React.FC<CheckboxProps> = ({ label, disabled, ...muiProps }) => {
+    return (
+        <label>
+            <MuiCheckbox disabled={disabled} {...muiProps} />
+            {label} {/* Render the label if provided */}
+        </label>
+    );
 };
