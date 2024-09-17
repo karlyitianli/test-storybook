@@ -1,10 +1,25 @@
 import React from 'react';
-import ToggleButton, { ToggleButtonProps as MUIToggleButtonProps } from '@mui/material/ToggleButton';
+import MUIToggleButton, { ToggleButtonProps as MUIToggleButtonProps } from '@mui/material/ToggleButton';
 
 export interface ToggleButtonProps extends MUIToggleButtonProps {
   // Add any custom props here
 }
 
-export const MUIToggleButton: React.FC<ToggleButtonProps> = ({ children, ...props }) => {
-  return <ToggleButton {...props}>{children}</ToggleButton>;
+export const ToggleButton: React.FC<ToggleButtonProps> = ({ 
+  children,
+  color = 'standard',
+  size = 'medium',
+  disabled = false,
+  ...props 
+}) => {
+  return (
+    <MUIToggleButton 
+      color={color}
+      size={size}
+      disabled={disabled}
+      {...props}
+    >
+      {children}
+    </MUIToggleButton>
+  );
 };

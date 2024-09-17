@@ -43,7 +43,7 @@ export const Primary: Story = {
   args: {
     label: 'Button',
     variant: 'contained',
-    textTransform: 'none',
+    // textTransform: 'none',
   },
 };
 
