@@ -1,4 +1,5 @@
 import React from 'react';
+import { Chip as MuiChip } from '@mui/material';
 
 interface ChipProps {
   label: string;
@@ -7,14 +8,11 @@ interface ChipProps {
 
 const Chip: React.FC<ChipProps> = ({ label, onDelete }) => {
   return (
-    <div style={{ display: 'inline-flex', alignItems: 'center', padding: '5px 10px', border: '1px solid gray', borderRadius: '16px' }}>
-      <span>{label}</span>
-      {onDelete && (
-        <button onClick={onDelete} style={{ marginLeft: '10px', cursor: 'pointer' }}>
-          &times;
-        </button>
-      )}
-    </div>
+    <MuiChip
+      label={label}
+      onDelete={onDelete}
+      variant="outlined"
+    />
   );
 };
 

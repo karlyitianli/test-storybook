@@ -1,6 +1,7 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import Chip, { ChipProps } from '../../components/data-display/Chip';
+import Chip from '../../components/data-display/Chip';
+import { ChipProps } from '../../components/data-display/Chip';
 
 export default {
   title: 'Data Display/Chip',

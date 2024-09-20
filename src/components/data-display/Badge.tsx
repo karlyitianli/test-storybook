@@ -1,16 +1,36 @@
-import React from 'react';
+import * as React from 'react';
+import Badge from '@mui/material/Badge';
+import MailIcon from '@mui/icons-material/Mail';
 
 interface BadgeProps {
-  label: string;
-  color?: string;
+  badgeContent?: number;
+  color?: 'default' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning';
+  invisible?: boolean;
+  max?: number;
+  showZero?: boolean;
+  variant?: 'dot' | 'standard';
 }
 
-const Badge: React.FC<BadgeProps> = ({ label, color = 'gray' }) => {
+const SimpleBadge: React.FC<BadgeProps> = ({
+  badgeContent = 4,
+  color = 'primary',
+  invisible = false,
+  max = 99,
+  showZero = false,
+  variant = 'standard',
+}) => {
   return (
-    <span style={{ backgroundColor: color, padding: '5px 10px', borderRadius: '5px', color: 'white' }}>
-      {label}
-    </span>
+    <Badge
+      badgeContent={badgeContent}
+      color={color}
+      invisible={invisible}
+      max={max}
+      showZero={showZero}
+      variant={variant}
+    >
+      <MailIcon color="action" />
+    </Badge>
   );
 };
 
-export default Badge;
+export default SimpleBadge;
