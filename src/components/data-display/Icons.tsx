@@ -1,14 +1,17 @@
 import React from 'react';
+import { AccessAlarm, Home } from '@mui/icons-material';
 
 interface IconProps {
   name: string;
-  size?: number;
+  fontSize?: 'small' | 'medium' | 'large';
   color?: string;
 }
 
-const Icons: React.FC<IconProps> = ({ name, size = 24, color = 'black' }) => {
+const Icons: React.FC<IconProps> = () => {
   return (
-    <i className={`icon-${name}`} style={{ fontSize: size, color }} />
+    <>
+      <Home />
+    </>
   );
 };
 
