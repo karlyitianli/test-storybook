@@ -1,10 +1,19 @@
 import React from 'react';
 import Tabs, { TabsProps as MUITabsProps } from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
 
 export interface TabsProps extends MUITabsProps {
-  // Add any custom props here
+  tabs: { label: string }[];
 }
 
-export const MUITabs: React.FC<TabsProps> = ({ children, ...props }) => {
-  return <Tabs {...props}>{children}</Tabs>;
+const CustomTabs: React.FC<TabsProps> = ({ tabs, ...props }) => {
+  return (
+    <Tabs {...props}>
+      {tabs.map((tab, index) => (
+        <Tab key={index} label={tab.label} />
+      ))}
+    </Tabs>
+  );
 };
+
+export default CustomTabs;
