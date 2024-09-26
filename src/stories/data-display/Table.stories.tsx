@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import Table from '../../components/data-display/Table';
+import { MUITable } from '../../components/data-display/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
@@ -10,12 +10,12 @@ import Paper from '@mui/material/Paper';
 
 export default {
   title: 'Data Display/Table',
-  component: Table,
+  component: MUITable,
 } as Meta;
 
 const Template: Story = (args) => (
   <TableContainer component={Paper}>
-    <Table {...args} />
+    <MUITable {...args} />
   </TableContainer>
 );
 

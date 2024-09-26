@@ -3,7 +3,7 @@ import { Meta, Story } from '@storybook/react';
 import Icons from '../../components/data-display/Icons';
 
 export default {
-  title: 'Data Display/Icons',
+  title: 'Foundations/Icons',
   component: Icons,
   argTypes: {
     size: {
