@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import Table from 'components/data-display/Table';
+import Table from '../../components/data-display/Table';
 
 export default {
   title: 'Data Display/Table',

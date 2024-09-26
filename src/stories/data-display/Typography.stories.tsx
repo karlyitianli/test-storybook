@@ -1,20 +1,15 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
-import Typography from 'components/data-display/Typography';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import Typography from '../../components/data-display/Typography';
 
 export default {
-  title: 'Data Display/Typography',
+  title: 'Foundations/Typography',
   component: Typography,
-} as Meta;
+} as ComponentMeta<typeof Typography>;
 
-const Template: Story = (args) => <Typography {...args} />;
+const Template: ComponentStory<typeof Typography> = (args) => <Typography {...args} />;
 
-export const Default = Template.bind({});
-Default.args = {
-  // Add default props here
-};
-
-export const WithText = Template.bind({});
-WithText.args = {
-  // Add props to display typography with text
+export const AllVariants = Template.bind({});
+AllVariants.args = {
+  text: 'Sample Text',
 };

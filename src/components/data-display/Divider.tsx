@@ -1,13 +1,17 @@
 import React from 'react';
+import { Divider as MuiDivider } from '@mui/material';
 
-interface DividerProps {
-  color?: string;
-  thickness?: number;
+export interface DividerProps {
+  variant?: 'fullWidth' | 'inset' | 'middle';
+  orientation?: 'horizontal' | 'vertical';
 }
 
-const Divider: React.FC<DividerProps> = ({ color = 'gray', thickness = 1 }) => {
+const Divider: React.FC<DividerProps> = ({ variant = 'fullWidth', orientation = 'horizontal' }) => {
   return (
-    <hr style={{ borderColor: color, borderWidth: thickness }} />
+    <MuiDivider 
+      variant={variant}
+      orientation={orientation}
+    />
   );
 };
 

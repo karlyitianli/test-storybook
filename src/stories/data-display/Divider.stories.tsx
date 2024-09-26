@@ -6,8 +6,14 @@ export default {
   title: 'Data Display/Divider',
   component: Divider,
   argTypes: {
-    color: { control: 'color' },
-    thickness: { control: 'number' },
+    variant: {
+      control: 'select',
+      options: ['fullWidth', 'inset', 'middle'],
+    },
+    orientation: {
+      control: 'select',
+      options: ['horizontal', 'vertical'],
+    },
   },
 } as Meta;
 
@@ -15,12 +21,4 @@ const Template: Story<DividerProps> = (args) => <Divider {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  color: 'gray',
-  thickness: 1,
-};
-
-export const Thick = Template.bind({});
-Thick.args = {
-  color: 'black',
-  thickness: 5,
 };
