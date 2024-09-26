@@ -1,45 +1,60 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Meta, Story } from '@storybook/react';
-import { MUISkeleton, SkeletonProps } from '../../components/feedback/Skeleton';
+import { MUISnackbar, SnackbarProps } from '../../components/feedback/Snackbar';
+import Button from '@mui/material/Button';
 
 export default {
-  title: 'Feedback/Skeleton',
-  component: MUISkeleton,
+  title: 'Feedback/Snackbar',
+  component: MUISnackbar,
   argTypes: {
-    variant: {
+    open: {
+      control: 'boolean',
+    },
+    message: {
+      control: 'text',
+    },
+    severity: {
       control: {
         type: 'select',
-        options: ['text', 'rectangular', 'circular'],
+        options: ['error', 'warning', 'info', 'success'],
       },
-    },
-    width: {
-      control: 'number',
-    },
-    height: {
-      control: 'number',
     },
   },
 } as Meta;
 
-const Template: Story<SkeletonProps> = (args) => <MUISkeleton {...args} />;
+const Template: Story<SnackbarProps> = (args) => {
+  const [open, setOpen] = useState(args.open);
 
-export const Text = Template.bind({});
-Text.args = {
-  variant: 'text',
-  width: 210,
-  height: 60,
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event?: React.SyntheticEvent, reason?: string) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setOpen(false);
+  };
+
+  return (
+    <div>
+      <Button variant="contained" onClick={handleClick}>
+        Show Snackbar
+      </Button>
+      <MUISnackbar {...args} open={open} onClose={handleClose} />
+    </div>
+  );
 };
 
-export const Rectangular = Template.bind({});
-Rectangular.args = {
-  variant: 'rectangular',
-  width: 210,
-  height: 118,
+export const Default = Template.bind({});
+Default.args = {
+  open: false,
+  message: 'This is a default snackbar message.',
 };
 
-export const Circular = Template.bind({});
-Circular.args = {
-  variant: 'circular',
-  width: 40,
-  height: 40,
+export const WithSeverity = Template.bind({});
+WithSeverity.args = {
+  open: false,
+  message: 'This is a snackbar with severity.',
+  severity: 'success',
 };
