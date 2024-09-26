@@ -1,10 +1,25 @@
 import React from 'react';
-import Menu, { MenuProps as MUIMenuProps } from '@mui/material/Menu';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import Button from '@mui/material/Button';
 
-export interface MenuProps extends MUIMenuProps {
-  // Add any custom props here
+export interface MenuProps {
+  anchorEl: null | HTMLElement;
+  open: boolean;
+  onClose: () => void;
+  items: { text: string; onClick: () => void }[];
 }
 
-export const MUIMenu: React.FC<MenuProps> = ({ children, ...props }) => {
-  return <Menu {...props}>{children}</Menu>;
+const CustomMenu: React.FC<MenuProps> = ({ anchorEl, open, onClose, items }) => {
+  return (
+    <Menu anchorEl={anchorEl} open={open} onClose={onClose}>
+      {items.map((item, index) => (
+        <MenuItem key={index} onClick={item.onClick}>
+          {item.text}
+        </MenuItem>
+      ))}
+    </Menu>
+  );
 };
+
+export default CustomMenu;
