@@ -2,7 +2,11 @@ import React from 'react';
 import MUITextField, { TextFieldProps as MUITextFieldProps } from '@mui/material/TextField';
 
 export interface TextFieldProps extends MUITextFieldProps {
-  // Add any custom props here
+  variant?: 'outlined' | 'filled' | 'standard';
+  size?: 'small' | 'medium';
+  disabled?: boolean;
+  fullWidth?: boolean;
+  color?: 'primary' | 'secondary';
 }
 
 export const TextField: React.FC<TextFieldProps> = ({ 
@@ -22,3 +26,5 @@ export const TextField: React.FC<TextFieldProps> = ({
     />
   );
 };
+
+export default TextField;
