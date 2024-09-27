@@ -1,5 +1,5 @@
 # Storybook with MUI components
-This repo is an instance of Storybook with all the MUI react components found [here](https://mui.com/material-ui/all-components/). 
+This repo is an instance of Storybook with the majority of MUI react components found [here](https://mui.com/material-ui/all-components/). 
 
 Use it to get started on developing your own component library.
 
@@ -7,62 +7,66 @@ Use it to get started on developing your own component library.
 1. Make sure you have node version 18 installed
 2. Run `npm run storybook`
 
-**Inputs (13)**
-- Autocomplete
-- Button
-- Button Group
-- Checkbox
-- Floating Action Button
-- Radio Group
-- Rating
-- Select
-- Slider
-- Switch
-- Text Field
-- Transfer List
-- Toggle Button
+**Foundations (3)**
+1. Colors
+2. Typography
+3. 🚧 Spacing
+4. Icons
 
-**Data Display (10)**
-- Avatar
-- Badge
-- Chip
-- Divider
-- Icons
-- List
-- Table
-- Tooltip
-- Typography
+**Inputs (12)**
+1. Autocomplete
+2. Button
+3. Button Group
+4. Checkbox
+5. Fab (Floating Action Button)
+6. Radio Group
+7. Rating
+8. Select
+9. Slider
+10. Switch
+11. Text Field
+12. Toggle Button
+
+**Data Display (9)**
+1. Avatar
+2. Badge
+3. Chip
+4. DataGrid
+5. Divider
+7. List
+8. Table
+9. Tooltip
 
 **Feedback (6)**
-- Alert
-- Backdrop
-- Dialog
-- Progress
-- Skeleton
-- Snackbar
+1. Alert
+2. Backdrop
+3. Dialog
+4. Progress
+5. Skeleton
+6. Snackbar
 
 **Surfaces (4)**
-- Accordion
-- App Bar
-- Card
-- Paper
+1. 🚧 Accordion
+2. 🚧 App Bar
+3. 🚧 Card
+4. 🚧 Paper
 
 **Navigation (9)**
-- Bottom Navigation
-- Breadcrumbs
-- Drawer
-- Link
-- Menu
-- Pagination
-- Speed Dial
-- Stepper
-- Tabs
+1. Bottom Navigation
+2. Breadcrumbs
+3. Drawer
+4. Link
+5. Menu
+6. Pagination
+7. Speed Dial
+8. Stepper
+9. Tabs
 
 **Layout (4)**
-- Box
-- Container
-- Grid
-- Stack
+1. 🚧 Box
+2. 🚧 Container
+3. 🚧 Grid
+4. 🚧 Stack
   
 # React + TypeScript + Vite
 
