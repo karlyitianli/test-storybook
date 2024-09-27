@@ -1,5 +1,11 @@
 # Storybook with MUI components
-This repo is an instance of Storybook with all the MUI react components found [here](https://mui.com/material-ui/all-components/). Use it to get started on developing your own component library.
+This repo is an instance of Storybook with all the MUI react components found [here](https://mui.com/material-ui/all-components/). 
+
+Use it to get started on developing your own component library.
+
+# How to run
+1. Make sure you have node version 18 installed
+2. Run `npm run storybook`
 
 **Inputs (13)**
 - Autocomplete
